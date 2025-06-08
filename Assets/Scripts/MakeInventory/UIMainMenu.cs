@@ -6,17 +6,17 @@ public class UIMainMenu : MonoBehaviour
 {
   public void OpenMainMenu()
   {
-    InventoryManager.Instance.UIMainMenu.SetActive(true);
+    InventoryManager.Instance.UIMainMenuPanel.SetActive(true);
   }
 
   public void OpenStatus()
   {
-    InventoryManager.Instance.UIStatus.SetActive(true);
+    InventoryManager.Instance.UIStatusPanel.SetActive(true);
   }
 
   public void OpenInventory()
   {
-    InventoryManager.Instance.UIInventory.SetActive(true);
+    InventoryManager.Instance.UIInventoryPanel.SetActive(true);
   }
   
 }

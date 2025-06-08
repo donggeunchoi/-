@@ -15,7 +15,7 @@ public class UIInventory : MonoBehaviour
 
     void BackButton()
     {
-        InventoryManager.Instance.UIInventory.SetActive(false);
+        InventoryManager.Instance.UIInventoryPanel.SetActive(false);
     }
     
 }

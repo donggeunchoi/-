@@ -14,6 +14,6 @@ public class UIStatus : MonoBehaviour
 
     void BackButton()
     {
-        InventoryManager.Instance.UIStatus.SetActive(false);
+        InventoryManager.Instance.UIStatusPanel.SetActive(false);
     }
 }
