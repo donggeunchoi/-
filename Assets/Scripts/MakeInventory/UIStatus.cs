@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStatus : MonoBehaviour
 {
-    // public void OpenMainMenu()
-    // {
-    //     InventoryManager.Instance.UIMainMenu.SetActive(true);
-    // }
+    public Button backButton;
+
+    void Start()
+    {
+        backButton.onClick.AddListener(BackButton);
+    }
+
+    void BackButton()
+    {
+        InventoryManager.Instance.UIStatus.SetActive(false);
+    }
 }

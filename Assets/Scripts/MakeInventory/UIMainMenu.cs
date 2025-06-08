@@ -18,14 +18,5 @@ public class UIMainMenu : MonoBehaviour
   {
     InventoryManager.Instance.UIInventory.SetActive(true);
   }
-
-  public void CloseInventory()
-  {
-    InventoryManager.Instance.UIInventory.SetActive(false);
-  }
-
-  public void CloseStatus()
-  {
-    InventoryManager.Instance.UIStatus.SetActive(false);
-  }
+  
 }
