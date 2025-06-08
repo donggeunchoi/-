@@ -10,14 +10,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject UIStatusPanel;
     [SerializeField] public GameObject UIInventoryPanel;
     
-    
-    //프로퍼티 선언
-    public UIMainMenu UIMainMenu { get; private set; }
-    public UIStatus UIStatus { get; private set; }
-    public UIInventory UIInventory { get; private set; }
-    
     //싱글톤 만들기
-    public static InventoryManager Instance;
+    public static InventoryManager Instance { get; private set; }
+    public Character Player { get; private set; }
+    
+    
 
     private void Awake()
     {
@@ -26,10 +23,9 @@ public class InventoryManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            //초기화.
-            UIMainMenu = UIMainMenuPanel.GetComponent<UIMainMenu>();
-            UIStatus =  UIStatusPanel.GetComponent<UIStatus>();
-            UIInventory = UIInventoryPanel.GetComponent<UIInventory>();
+            //플레이어 정보 집어 넣기
+            Player = new Character("스파르타", 11, 35, 40, 100, 25);
+            
         }
         else
         {
@@ -37,5 +33,10 @@ public class InventoryManager : MonoBehaviour
             return;
         }
     }
+
+    // private void Start()
+    // {
+    //     UIManager.Instance.SetAllUI(Player);
+    // }
     
 }

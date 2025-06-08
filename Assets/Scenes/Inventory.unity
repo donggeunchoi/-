@@ -1174,9 +1174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d65fd85cf24049e2a55996ce8a0f3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIMainMenu: {fileID: 348647130}
-  UIStatus: {fileID: 1610034278}
-  UIInventory: {fileID: 1889253409}
+  UIMainMenuPanel: {fileID: 348647130}
+  UIStatusPanel: {fileID: 1610034278}
+  UIInventoryPanel: {fileID: 1889253409}
 --- !u!4 &110672048
 Transform:
   m_ObjectHideFlags: 0
@@ -1847,6 +1847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef014cd2ed0245e4ab7d0594190d9ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 742687078}
+  levelText: {fileID: 1465183341}
 --- !u!1 &439705863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,6 +4807,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 1818163708}
+  attackText: {fileID: 54286921}
+  defenseText: {fileID: 177061243}
+  hpText: {fileID: 1584441024}
+  criticalText: {fileID: 2002228226}
 --- !u!1 &1708716648
 GameObject:
   m_ObjectHideFlags: 0
