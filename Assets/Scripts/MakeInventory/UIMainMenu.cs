@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class UIMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public void OpenMainMenu()
+  {
+    InventoryManager.Instance.UIMainMenu.SetActive(true);
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public void OpenStatus()
+  {
+    InventoryManager.Instance.UIStatus.SetActive(true);
+  }
+
+  public void OpenInventory()
+  {
+    InventoryManager.Instance.UIInventory.SetActive(true);
+  }
+
+  public void CloseInventory()
+  {
+    InventoryManager.Instance.UIInventory.SetActive(false);
+  }
+
+  public void CloseStatus()
+  {
+    InventoryManager.Instance.UIStatus.SetActive(false);
+  }
 }
