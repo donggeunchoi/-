@@ -12,7 +12,9 @@ public class InventoryManager : MonoBehaviour
     
     //싱글톤 만들기
     public static InventoryManager Instance { get; private set; }
-    public Character Player { get; private set; }
+    
+    
+    public Player player { get; private set; }
     
     
 
@@ -23,9 +25,6 @@ public class InventoryManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            //플레이어 정보 집어 넣기
-            Player = new Character("스파르타", 11, 35, 40, 100, 25);
-            
         }
         else
         {
@@ -34,9 +33,19 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // private void Start()
-    // {
-    //     UIManager.Instance.SetAllUI(Player);
-    // }
+    private void Start()
+    {
+        SetData();
+    }
+
+    public void SetData()
+    {
+            //플레이어 정보 집어 넣기
+        Character character = new Character("스파르타", 11, 35, 40, 100, 25);
+        player = new Player(character);
+
+        UIManager.Instance.SetAllUI(player.Character);
+       
+    }
     
 }

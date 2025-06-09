@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     
     public UIMainMenu UIMainMenu { get; private set; }
     public UIStatus UIStatus { get; private set; }
+    
+    [SerializeField] private UIMainMenu uiMainMenu;
+    [SerializeField] private UIStatus uiStatus;
 
     private void Awake()
     {
@@ -16,8 +19,8 @@ public class UIManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            UIMainMenu = GetComponentInChildren<UIMainMenu>();
-            UIStatus = GetComponentInChildren<UIStatus>();
+           UIMainMenu = uiMainMenu;
+           UIStatus = uiStatus;
         }
         else
         {
