@@ -34,11 +34,11 @@ public class Character
 
     public void Equip(Item item)
     {
-        Debug.Log($"{item.name} 장착완료");
+        Debug.Log($"{item.Name} 장착완료");
     }
 
     public void Unequip(Item item)
     {
-        Debug.Log($"{item.name} 해재완료");
+        Debug.Log($"{item.Name} 해재완료");
     }
 }

@@ -12,7 +12,7 @@ public class UIInventory : MonoBehaviour
     //컨텐츠 연결.
     [SerializeField] private Transform slotParent;
     
-    private List<UISlot> slotList = new List<UISlot>();
+    private List<UISlot> _slotList = new List<UISlot>();
     
     
     
@@ -20,7 +20,6 @@ public class UIInventory : MonoBehaviour
     private void Start()
     {
         backButton.onClick.AddListener(BackButton);
-        // InitInventoryUI();
     }
 
     void BackButton()
@@ -30,11 +29,11 @@ public class UIInventory : MonoBehaviour
 
     public void InitInventoryUI(List<Item> inventory)
     {
-        foreach (UISlot slot in slotList)
+        foreach (UISlot slot in _slotList)
         {
             Destroy(slot.gameObject); 
         }
-        slotList.Clear();
+        _slotList.Clear();
 
 
         int slotCount = 10;
@@ -44,13 +43,14 @@ public class UIInventory : MonoBehaviour
             UISlot newSlot = Instantiate(slotPrefab, slotParent);
             if (i < inventory.Count)
             {
+                Debug.Log($"{i},{inventory[i].Icon}");
                 newSlot.SetItem(inventory[i]);
             }
             else
             {
                 newSlot.SetItem(null);
             }
-            slotList.Add(newSlot);
+            _slotList.Add(newSlot);
         }
         
         
