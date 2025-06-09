@@ -6,11 +6,14 @@ public class Item
 {
     public string Name { get; private set; }
     public Sprite Icon { get; private set; }
+    
+    public bool EquipItem { get; set; }
 
     public Item(string name, Sprite icon)
     {
         Name = name;
         Icon = icon;
+        EquipItem = false;
     }
    
 }
