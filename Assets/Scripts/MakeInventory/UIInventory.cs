@@ -52,23 +52,6 @@ public class UIInventory : MonoBehaviour
             }
             _slotList.Add(newSlot);
         }
-        
-        
-        
-        
-        // for (int i = 0; i < 10; i++)
-        // {
-        //     // 가짜 아이템 데이터 생성
-        //     Item fakeItem = new Item($"Item {i+1}", null);  // 아이콘은 null 일단 테스트용
-        //
-        //     UISlot newslot = Instantiate(slotPrefab, slotParent);
-        //     // SetItem 호출
-        //     newslot.SetItem(fakeItem);
-        //     slotList.Add(newslot);
-        //     
-        //
-        //     
-        // }
     }
     
 }
