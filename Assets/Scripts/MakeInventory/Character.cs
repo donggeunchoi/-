@@ -11,6 +11,8 @@ public class Character
     public int Defense;
     public int HP;
     public int Critical;
+    
+    public List<Item> Inventory { get; private set; }
 
     //캐릭터 생성자 생성.
     public Character(string name,int level, int attack, int defense, int hp, int critical)
@@ -21,5 +23,22 @@ public class Character
         Defense = defense;
         HP = hp;
         Critical = critical;
+        
+        Inventory = new List<Item>();
+    }
+
+    public void AddItem(Item item)
+    {
+        Inventory.Add(item);
+    }
+
+    public void Equip(Item item)
+    {
+        Debug.Log($"{item.name} 장착완료");
+    }
+
+    public void Unequip(Item item)
+    {
+        Debug.Log($"{item.name} 해재완료");
     }
 }

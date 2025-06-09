@@ -9,6 +9,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject UIMainMenuPanel;
     [SerializeField] public GameObject UIStatusPanel;
     [SerializeField] public GameObject UIInventoryPanel;
+
+
+    [Header("무기 이미지")] public Sprite swordSprite;
+    public Sprite weapon1Sprite;
+    public Sprite weapon2Sprite;
     
     //싱글톤 만들기
     public static InventoryManager Instance { get; private set; }
@@ -44,7 +49,18 @@ public class InventoryManager : MonoBehaviour
         Character character = new Character("스파르타", 11, 35, 40, 100, 25);
         player = new Player(character);
 
+        Item item1 = new Item("소드", swordSprite);
+        Item item2 = new Item("무기2", weapon1Sprite);
+        Item item3 = new Item("무기3", weapon2Sprite);
+        
+        player.Character.AddItem(item1);
+        player.Character.AddItem(item2);
+        player.Character.AddItem(item3);
+        
+        
         UIManager.Instance.SetAllUI(player.Character);
+        
+        UIManager.Instance.UIInventory.InitInventoryUI(player.Character.Inventory);
        
     }
     

@@ -21,8 +21,14 @@ public class UISlot : MonoBehaviour
     {
         if (itemData != null)
         {
-            itemIcon.sprite = itemData.icon;
-            itemName.text = itemData.name;
+            itemIcon.sprite = itemData.Icon;
+            itemIcon.enabled = true;
+            // itemName.text = itemData.name;
+        }
+        else
+        {
+            itemIcon.sprite = null;
+            itemIcon.enabled = false;
         }
     }
     

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public string itemName;
-    public Sprite icon;
+    public string Name { get; private set; }
+    public Sprite Icon { get; private set; }
 
     public Item(string name, Sprite icon)
     {
-        itemName = name;
-        this.icon = icon;
+        Name = name;
+        Icon = icon;
     }
    
 }

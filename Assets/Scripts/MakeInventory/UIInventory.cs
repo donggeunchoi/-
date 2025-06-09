@@ -20,7 +20,7 @@ public class UIInventory : MonoBehaviour
     private void Start()
     {
         backButton.onClick.AddListener(BackButton);
-        InitInventoryUI();
+        // InitInventoryUI();
     }
 
     void BackButton()
@@ -28,14 +28,47 @@ public class UIInventory : MonoBehaviour
         InventoryManager.Instance.UIInventoryPanel.SetActive(false);
     }
 
-    public void InitInventoryUI()
+    public void InitInventoryUI(List<Item> inventory)
     {
-        for (int i = 0; i < 10; i++)
+        foreach (UISlot slot in slotList)
         {
-            UISlot newslot = Instantiate(slotPrefab, slotParent);
-            slotList.Add(newslot);
-            
+            Destroy(slot.gameObject); 
         }
+        slotList.Clear();
+
+
+        int slotCount = 10;
+
+        for (int i = 0; i < slotCount; i++)
+        {
+            UISlot newSlot = Instantiate(slotPrefab, slotParent);
+            if (i < inventory.Count)
+            {
+                newSlot.SetItem(inventory[i]);
+            }
+            else
+            {
+                newSlot.SetItem(null);
+            }
+            slotList.Add(newSlot);
+        }
+        
+        
+        
+        
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     // 가짜 아이템 데이터 생성
+        //     Item fakeItem = new Item($"Item {i+1}", null);  // 아이콘은 null 일단 테스트용
+        //
+        //     UISlot newslot = Instantiate(slotPrefab, slotParent);
+        //     // SetItem 호출
+        //     newslot.SetItem(fakeItem);
+        //     slotList.Add(newslot);
+        //     
+        //
+        //     
+        // }
     }
     
 }
