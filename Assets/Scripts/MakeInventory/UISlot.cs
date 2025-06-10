@@ -56,20 +56,34 @@ public class UISlot : MonoBehaviour
         {
             return;
         }
-
-        if (itemData.EquipItem)
+        
+        if (itemData.EquipItem == false)
         {
-            itemData.EquipItem = false;
-            InventoryManager.Instance.player.Character.Unequip(itemData);
+            //장착시도
+            if (InventoryManager.Instance.player.Character.EquippedItem != null)
+            {
+                Debug.Log("기본에 있던 장비 해제 완료했데이");
+                //장비가 이미 있으니 해제 시키기
+                InventoryManager.Instance.player.Character.Unequip(InventoryManager.Instance.player.Character.EquippedItem);
+                InventoryManager.Instance.player.Character.EquippedItem.EquipItem = false;
+            }
+            Debug.Log("장비장착완료");
+            itemData.EquipItem = true;
+            InventoryManager.Instance.player.Character.Equip(itemData);
+            InventoryManager.Instance.player.Character.EquippedItem = itemData;
+
         }
         else
         {
-            itemData.EquipItem = true;
-            InventoryManager.Instance.player.Character.Equip(itemData);
+            //해제
+            itemData.EquipItem = false;
+            InventoryManager.Instance.player.Character.Unequip(itemData);
+            InventoryManager.Instance.player.Character.EquippedItem = null;
         }
         
         RefreshUI();
         UIManager.Instance.UIStatus.SetCharacterInfo(InventoryManager.Instance.player.Character);
+        UIManager.Instance.UIInventory.RefreshAllSlots();
     }
     
 }

@@ -12,6 +12,8 @@ public class Character
     public int HP;
     public int Critical;
     
+    public Item EquippedItem { get; set; }
+    
     public List<Item> Inventory { get; private set; }
 
     //캐릭터 생성자 생성.
