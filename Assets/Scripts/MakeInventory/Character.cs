@@ -35,10 +35,17 @@ public class Character
     public void Equip(Item item)
     {
         Debug.Log($"{item.Name} 장착완료");
+        Attack += item.Attack;
+        Defense += item.Defense;
+        Critical += item.Critical;
     }
 
     public void Unequip(Item item)
     {
         Debug.Log($"{item.Name} 해재완료");
+
+        Attack -= item.Attack;
+        Defense -= item.Defense;
+        Critical -= item.Critical;
     }
 }

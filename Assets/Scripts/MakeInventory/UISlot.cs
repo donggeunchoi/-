@@ -60,7 +60,7 @@ public class UISlot : MonoBehaviour
         if (itemData.EquipItem)
         {
             itemData.EquipItem = false;
-            InventoryManager.Instance.player.Character.Equip(itemData);
+            InventoryManager.Instance.player.Character.Unequip(itemData);
         }
         else
         {

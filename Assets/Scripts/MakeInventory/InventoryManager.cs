@@ -49,9 +49,9 @@ public class InventoryManager : MonoBehaviour
         Character character = new Character("스파르타", 11, 35, 40, 100, 25);
         player = new Player(character);
 
-        Item item1 = new Item("소드", swordSprite);
-        Item item2 = new Item("무기2", weapon1Sprite);
-        Item item3 = new Item("무기3", weapon2Sprite);
+        Item item1 = new Item("소드", swordSprite,10,1,5);
+        Item item2 = new Item("무기2", weapon1Sprite,20,2,3);
+        Item item3 = new Item("무기3", weapon2Sprite,5,4,6);
         
         player.Character.AddItem(item1);
         player.Character.AddItem(item2);
