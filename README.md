@@ -62,6 +62,7 @@
 
 
 - 관련 트러블 슈팅 : (https://blog.naver.com/PostView.naver?blogId=gxxnn__&logNo=223893682456&categoryNo=39&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
+- (https://blog.naver.com/PostView.naver?blogId=gxxnn__&logNo=223894830019&categoryNo=39&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1)
 
 ---
 
